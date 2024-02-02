@@ -4,8 +4,8 @@ var suc=false;
     
 function play() {
     let guess = document.getElementById("guess").value;
-    gess=+gess;
     chance -= 1;
+    guess=+guess;
     if (guess === number) {
         document.getElementById("message").innerHTML = "축하합니다! 숫자를 맞추셨습니다. 이스터 에그 힌트를 드리겠습니다! 제작자의 이름을 써보세요!";
         number = Math.floor(Math.random() * 100) + 1;
@@ -19,9 +19,13 @@ function play() {
     else{
         document.getElementById("message").innerHTML = `숫자를 입력해 주세요.${chance}번 남았습니다.`;
     }
-    if(chance == 0 && !suc){
+    if(chance === 0 && !suc){
         alert(`정답은${number} 이었습니다.. 다시 도전하세요!`);
         number = Math.floor(Math.random() * 100) + 1;
         chance=7;
+    }
+    else if(chance===0){
+        chance=7;
+        suc=false;
     }
 }
