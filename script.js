@@ -4,6 +4,7 @@ var suc=false;
     
 function play() {
     let guess = document.getElementById("guess").value;
+    gess=+gess;
     chance -= 1;
     if (guess === number) {
         document.getElementById("message").innerHTML = "축하합니다! 숫자를 맞추셨습니다. 이스터 에그 힌트를 드리겠습니다! 제작자의 이름을 써보세요!";
